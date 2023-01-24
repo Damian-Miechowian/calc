@@ -6,10 +6,10 @@ let amountElement = document.querySelector(".js-amount");
 let resultElement = document.querySelector(".js-result");
 
 
-let EUR = 4.6938;
-let USD = 4.4127;
-let CHF = 4.7438;
-let GBP = 5.3085;
+let EUR = 4.7186;
+let USD = 4.3246;
+let CHF = 4.7118;
+let GBP = 5.3648;
 
 
 formElement.addEventListener("submit", (event) => {
@@ -34,29 +34,15 @@ formElement.addEventListener("submit", (event) => {
             break
     }
 
-    resultElement.innerText = result.toFixed(2);   
+    resultElement.innerText = result.toFixed(2);
 
-    
-    // w wyniku po wyczyszczeniu bedzie puste pole, ale bylo zalecenie żeby zrobić to poza -submit-
-
-// formElement.addEventListener("reset", () => {
-//     event.preventDefault();
-
-//     resultElement.innerText = "";
 })
+
 
 formElement.addEventListener("reset", () => {
-        resultElement.innerText = ""; 
+    resultElement.innerText = "";
 })
 
 
-
-
-// w wyniku po wyczyszczeniu będzie 0:
- // formElement.addEventListener("reset", () => {
-    //     event.preventDefault();
-
-    //     resultElement.innerText = result * 0;
-    // })
 
 
