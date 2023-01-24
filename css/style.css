@@ -1,0 +1,30 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+::after,
+::before {
+    box-sizing: inherit;
+}
+
+
+.body {
+    display: flex;
+    flex-direction: column;
+    background-image: url(../images/background.jpg);
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.main {
+    flex-basis: 500px;
+    font-family: 'Lato', sans-serif;
+    background-color: tan;
+    margin: 30px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 20px 20px 35px black;
+}
