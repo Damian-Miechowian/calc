@@ -1,9 +1,9 @@
 .footer {
-    max-width: 600px;
-    margin: 200px auto;
-    background-color: #43434d;
-    color: #ffffff;
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: black;
+    color: khaki;
     text-align: center;
     padding: 4px;
-    font-size: 10px;
+    font-size: 11px;
 }
