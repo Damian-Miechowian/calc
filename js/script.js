@@ -1,47 +1,71 @@
-console.log("Witam wszystkich developerów!");
+{
+    function welcome() {
+        console.log("Witam wszystkich developerów!");
+    };
 
-let formElement = document.querySelector(".js-form");
-let valueElement = document.querySelector(".js-value");
-let amountElement = document.querySelector(".js-amount");
-let resultElement = document.querySelector(".js-result");
+    welcome();
 
+    const calculateResult = (amount, value) => {
 
-let EUR = 4.7186;
-let USD = 4.3246;
-let CHF = 4.7118;
-let GBP = 5.3648;
+        const EUR = 4.7186;
+        const USD = 4.3246;
+        const CHF = 4.7118;
+        const GBP = 5.3648;
 
+        switch (value) {
+            case "EUR":
+                return amount * EUR;
 
-formElement.addEventListener("submit", (event) => {
-    event.preventDefault();
+            case "USD":
+                return amount * USD;
 
-    let value = valueElement.value;
-    let amount = amountElement.value;
+            case "CHF":
+                return amount * CHF;
 
+            case "GBP":
+                return amount * GBP;
+        };
+    };
 
-    switch (value) {
-        case "EUR":
-            result = amount * EUR;
-            break;
-        case "USD":
-            result = amount * USD;
-            break;
-        case "CHF":
-            result = amount * CHF;
-            break;
-        case "GBP":
-            result = amount * GBP;
-            break
-    }
+    const updateResultText = (result) => {
+        const resultElement = document.querySelector(".js-result");
+        resultElement.innerText = result.toFixed(2);
+    };
 
-    resultElement.innerText = result.toFixed(2);
+    const onFormSubmit = (event) => {
+        event.preventDefault();
 
-})
+        const valueElement = document.querySelector(".js-value");
+        const amountElement = document.querySelector(".js-amount");
 
+        const value = valueElement.value;
+        const amount = +amountElement.value;
 
-formElement.addEventListener("reset", () => {
-    resultElement.innerText = "";
-})
+        const result = calculateResult(amount, value);
+        updateResultText(result);
+    };
+
+  
+    const init = () => {
+        const formElement = document.querySelector(".js-form");
+        formElement.addEventListener("submit", onFormSubmit);
+    };
+    
+    const onFormReset = () => {        
+        resetElement.innerText = "";
+    };
+
+    const clear = () => {
+        const resetElement = document.querySelector(".js-reset");
+        resetElement.addEventListener("reset", onFormReset);
+                
+    };
+   
+    init();  
+
+    clear();
+   
+    };
 
 
 
