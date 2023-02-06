@@ -3,7 +3,6 @@
         console.log("Witam wszystkich developerów!");
     };
 
-    welcome();
 
     const calculateResult = (amount, value) => {
 
@@ -45,27 +44,30 @@
         updateResultText(result);
     };
 
-  
+
     const init = () => {
+        welcome();
         const formElement = document.querySelector(".js-form");
         formElement.addEventListener("submit", onFormSubmit);
-    };
-    
-    const onFormReset = () => {        
-        resetElement.innerText = "";
+        formElement.addEventListener("reset", onFormReset);
     };
 
-    const clear = () => {
-        const resetElement = document.querySelector(".js-reset");
-        resetElement.addEventListener("reset", onFormReset);
-                
+    const onFormReset = () => {
+        updateResultText("");
+        // resetElement.innerText = "";
     };
-   
-    init();  
 
-    clear();
-   
-    };
+    // const clear = () => {
+    //     const resetElement = document.querySelector(".js-reset");
+    //     resetElement.addEventListener("reset", onFormReset);
+
+    // };
+
+    init();
+
+    // clear();
+
+};
 
 
 
