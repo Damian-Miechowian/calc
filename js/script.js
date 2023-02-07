@@ -28,7 +28,7 @@
 
     const updateResultText = (result) => {
         const resultElement = document.querySelector(".js-result");
-        resultElement.innerText = result.toFixed(2);
+        resultElement.innerText = result
     };
 
     const onFormSubmit = (event) => {
@@ -41,7 +41,8 @@
         const amount = +amountElement.value;
 
         const result = calculateResult(amount, value);
-        updateResultText(result);
+
+        updateResultText(result.toFixed(2));
     };
 
 
@@ -54,20 +55,13 @@
 
     const onFormReset = () => {
         updateResultText("");
-        // resetElement.innerText = "";
     };
-
-    // const clear = () => {
-    //     const resetElement = document.querySelector(".js-reset");
-    //     resetElement.addEventListener("reset", onFormReset);
-
-    // };
 
     init();
 
-    // clear();
-
 };
+
+
 
 
 
